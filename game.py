@@ -42,9 +42,9 @@ spike_upside_right = pygame.image.load("Assets\Obstacles\Spikes\spike_upside_rig
 
 # lava_flowing = pygame.image.load("Assets\Obstacles\Lava\lava_flowing.png")
 
-# gravity_up = pygame.image.load("Assets\Obstacles\Gravity\gravity_up.png")
-# gravity_down = pygame.image.load("Assets\Obstacles\Gravity\gravity_down.png")
-#
+gravity_up = pygame.image.load("Assets\Obstacles\Gravity\gravity_up.png")
+gravity_down = pygame.image.load("Assets\Obstacles\Gravity\gravity_down.png")
+
 # game_menu = pygame.image.load("Assets\GUI\game_menu.png")
 # gravity_bar = pygame.image.load("Assets\GUI\gravity_bar.png")
 # button = pygame.image.load("Assets\GUI\button.png")
