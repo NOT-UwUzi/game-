@@ -6,12 +6,19 @@ import math
 pygame.init()
 
 # Set up sprites
-# character = pygame.image.load("Assets\Character\char_forward.png")
-# character_left1 = pygame.image.load("Assets\Character\char_left1.png")
-# character_left2 = pygame.image.load("Assets\Character\char_left2.png")
-# character_right1 = pygame.image.load("Assets\Character\char_right1.png")
-# character_right2 = pygame.image.load("Assets\Character\char_right2.png")
-# character_death = pygame.image.load("Assets\Character\char_dead.png")
+slime_forward_1 = pygame.image.load("Assets\Slime\slime_forward_1.png")
+slime_forward_2 = pygame.image.load("Assets\Slime\slime_forward_2.png")
+slime_forward_3 = pygame.image.load("Assets\Slime\slime_forward_3.png")
+
+slime_left_1 = pygame.image.load("Assets\Slime\slime_left_1.png")
+slime_left_2 = pygame.image.load("Assets\Slime\slime_left_2.png")
+slime_left_3 = pygame.image.load("Assets\Slime\slime_left_3.png")
+slime_left_4 = pygame.image.load("Assets\Slime\slime_left_4.png")
+
+slime_right_1 = pygame.image.load("Assets\Slime\slime_right_1.png")
+slime_right_2 = pygame.image.load("Assets\Slime\slime_right_2.png")
+slime_right_3 = pygame.image.load("Assets\Slime\slime_right_3.png")
+slime_right_ 4= pygame.image.load("Assets\Slime\slime_right_4.png")
 
 basic_block = pygame.image.load("Assets\Blocks\Basic_block.png")
 deco_block = pygame.image.load("Assets\Blocks\deco_block.png")
