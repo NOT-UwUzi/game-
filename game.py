@@ -13,7 +13,7 @@ pygame.init()
 # character_right2 = pygame.image.load("Assets\Character\char_right2.png")
 # character_death = pygame.image.load("Assets\Character\char_dead.png")
 
-basic_block = pygame.image.load("Assets\Blocks\basic_block.png")
+basic_block = pygame.image.load("Assets\Blocks\Basic_block.png")
 deco_block = pygame.image.load("Assets\Blocks\deco_block.png")
 one_way_left = pygame.image.load("Assets\Blocks\one_way_left.png")
 one_way_right = pygame.image.load("Assets\Blocks\one_way_right.png")
@@ -53,71 +53,65 @@ level1 = pygame.image.load("Assets\Levels\level1.png")
 # level9 = pygame.image.load("Assets\Levels\level9.png")
 # boss = pygame.image.load("Assets\Levels\level10.png")
 
-level_list = [game_menu, level1, level2, level3, level4, level5, level6, level7, level8, level9, boss]
+#level_list = [game_menu, level1, level2, level3, level4, level5, level6, level7, level8, level9, boss]
 
 # Set up the drawing window
 level = 0
-current_level = level_list[level]
-if button_pressed == true:
-    level += 1
+#current_level = level_list[level]
+#if button_pressed == true:
 screen = pygame.display.set_mode([500, 500])
-velocity = 20
-
+velocity = 7.5
 class char(object):  # represents the chara cter, not the game
     def __init__(self):
         """ The constructor of the class """
-        self.image = pygame.image.load(img_path) #NOT SURE WHAT IM COOKING PLEASE HELP
+        #self.image = pygame.image.load(img_path) #NOT SURE WHAT IM COOKING PLEASE HELP
         # the position
         self.x = 0
         self.y = 0
 
-def handle_keys(self):
-        """ Handles Keys """
-        key = pygame.key.get_pressed()
-        dist = 1 # distance moved in 1 frame, try changing it to 5
-        if key[pygame.K_RIGHT]: # right key
-            self.x += dist # move right
-        elif key[pygame.K_LEFT]: # left key
-            self.x -= dist # move left
-    
-        if key[pygame.K_UP]: # up key
-            self.y -= dist # move up
-        elif key[pygame.K_SPACE] and y < 480 and air == False:
-            air = True
-        else: # let gravity exist
-            self.y += dist # go down
-        
-        if(isJump == False): 
-            if key[pygame.K_SPACE]:
-                isJump = True
-        else:
-            if jumpCount >= -10:
-                y -= (jumpCount * abs(jumpCount)) * velocity/20
-                jumpCount -= 1
-            else: 
-                jumpCount = 10
-                isJump = False
-        
 
-def draw(self, surface): #self is char, surface is background
-    """ Draw on surface """
-    # blit yourself at your current position
-    surface.blit(self.image, (self.x, self.y))
+
+        
+x = 20
+y = 480
 
 # Run until the user asks to quit
+isJump = False
+jumpCount = 10
+
 run = True
 while run:
-    # Did the user click the window close button?
+    pygame.time.delay(10)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            running = False
-    pygame.time.delay(15)
+            run = False
 
-    # First game menu
-    gameDisplay.blit(game_menu, (0,0))
+    # Fill the background with white
 
-    # Sprites
-    screen.blit(char, (0,0))
+    keys = pygame.key.get_pressed() 
+    if keys[pygame.K_LEFT] and x>0:
+        x -= velocity
+    elif keys[pygame.K_RIGHT] and x < 480:
+        x += velocity
+    
+
+    if(isJump == False): 
+        if keys[pygame.K_SPACE]:
+            isJump = True
+    else:
+        if jumpCount >= -10:
+            y -= (jumpCount * abs(jumpCount)) * velocity/40
+            jumpCount -= 1
+        else: 
+            jumpCount = 10
+            isJump = False
+
+    screen.fill((0, 0, 0)) 
+
+
+    pygame.draw.rect(screen, (255, 0, 0), (x, y, 20, 20)) 
+
     pygame.display.update()
+
 
 pygame.quit()
